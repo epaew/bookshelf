@@ -1,0 +1,115 @@
+scalar Date
+
+schema {
+  # mutation: Mutation
+  query: Query
+}
+
+# type Mutation {}
+
+type Query {
+  author(id: ID!): Author!
+  authorConnection(first: Int, after: String): AuthorConnection!
+  bookSeries(id: ID!): BookSeries!
+  bookSeriesConnection(first: Int, after: String): BookSeriesConnection!
+  publisher(id: ID!): Publisher!
+  publisherConnection(first: Int, after: String): PublisherConnection!
+  user(id: ID!): User!
+  userConnection(first: Int, after: String): UserConnection!
+}
+
+type Author {
+  id: ID!
+  bookSeriesConnection(first: Int, after: String): BookSeriesConnection!
+  name: String!
+}
+
+type AuthorConnection {
+  edges: [AuthorEdge!]!
+  pageInfo: PageInfo!
+  totalConut: Int!
+}
+
+type AuthorEdge {
+  cursor: String!
+  node: Author!
+}
+
+type Book {
+  id: ID!
+  number: Int
+  publishedAt: Date!
+  series: BookSeries!
+  subtitle: String!
+}
+
+type BookConnection {
+  edges: [BookEdge!]!
+  pageInfo: PageInfo!
+  totalConut: Int!
+}
+
+type BookEdge {
+  cursor: String!
+  node: Book!
+}
+
+type BookSeries {
+  id: ID!
+  authors: [Author!]!
+  bookConnection: BookConnection!
+  publisher: Publisher!
+  title: String!
+}
+
+type BookSeriesConnection {
+  edges: [BookSeriesEdge!]!
+  pageInfo: PageInfo!
+  totalConut: Int!
+}
+
+type BookSeriesEdge {
+  cursor: String!
+  node: BookSeries!
+}
+
+type PageInfo {
+  endCursor: String
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+}
+
+type Publisher {
+  id: ID!
+  bookSeriesConnection(first: Int, after: String): BookSeriesConnection!
+  name: String!
+}
+
+type PublisherConnection {
+  edges: [PublisherEdge!]!
+  pageInfo: PageInfo!
+  totalConut: Int!
+}
+
+type PublisherEdge {
+  cursor: String!
+  node: Publisher!
+}
+
+type User {
+  id: ID!
+  bookConnection(first: Int, after: String): BookConnection!
+  displayName: String!
+}
+
+type UserConnection {
+  edges: [UserEdge!]!
+  pageInfo: PageInfo!
+  totalConut: Int!
+}
+
+type UserEdge {
+  cursor: String!
+  node: User!
+}
