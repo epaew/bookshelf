@@ -1,0 +1,22 @@
+overwrite: true
+generates:
+  packages/api/src/app/apollo-server/types/generated.ts:
+    config:
+      # contextType: ''
+      mappers:
+        Author: ./mappers#AuthorMapper
+      useIndexSignature: true
+    plugins:
+      - typescript
+      - typescript-resolvers
+
+config:
+  enumsAsTypes: true
+  scalars:
+    ID: string
+    Date: Date
+schema:
+  - packages/api/schema.graphql
+# hooks:
+#   afterAllFileWrite:
+#     - eslint --fix

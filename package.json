@@ -8,6 +8,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "codegen": "graphql-codegen --config graphql-codegen.yaml"
+  },
   "devDependencies": {
     "@graphql-codegen/cli": "^1.20.0",
     "@graphql-codegen/typescript": "^1.20.0",
