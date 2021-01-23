@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: packages/api/Dockerfile.dev
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgres://app:password@db/development
+      NODE_ENV: development
+      PORT: 4000
+    ports:
+      - 4000:4000
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./tsconfig.json:/app/tsconfig.json:ro
+      - ./packages/api:/app/packages/api:cached
+      - /app/packages/api/node_modules
+  db:
+    image: postgres:12
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: development
+      TZ: Asia/Tokyo
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+volumes:
+  pg_data: {}
