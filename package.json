@@ -5,6 +5,9 @@
   "repository": "git@github.com:epaew/bookshelf.git",
   "license": "MIT",
   "author": "epaew <epaew.333@gmail.com>",
+  "workspaces": [
+    "packages/*"
+  ],
   "devDependencies": {
     "sort-package-json": "^1.48.1",
     "typescript": "^4.1.3",

@@ -1,0 +1,36 @@
+{
+  "name": "@bookshelf/api",
+  "version": "0.1.0",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist/",
+    "db:migration:apply:development": "prisma migrate dev --preview-feature",
+    "db:migration:apply:production": "prisma migrate deploy --preview-feature",
+    "db:migration:generate": "prisma migrate dev --create-only --preview-feature",
+    "db:migration:reset": "prisma migrate reset --preview-feature",
+    "dev": "nodemon --files src/index.ts",
+    "start": "node dist/index.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@prisma/cli": "2.15.0",
+    "@prisma/client": "2.15.0",
+    "apollo-server-express": "^2.19.2",
+    "express": "^4.17.1",
+    "graphql": "^15.4.0",
+    "pg": "^8.5.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.22",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3"
+  }
+}
