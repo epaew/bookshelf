@@ -3,7 +3,6 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import HelpIcon from '@material-ui/icons/Help';
-import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -14,7 +13,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Tooltip from '@material-ui/core/Tooltip';
 import { createStyles, Theme, withStyles, WithStyles } from '@material-ui/core/styles';
 
-import { Typography } from '../base/atoms';
+import { Hidden, Typography } from '../base/atoms';
 
 const lightColor = 'rgba(255, 255, 255, 0.7)';
 
