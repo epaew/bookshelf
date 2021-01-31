@@ -1,8 +1,10 @@
 import { Typography } from '@material-ui/core';
 import { FC } from 'react';
 
-const LandingPage: FC = () => {
-  return <Typography variant="h1">LandingPage</Typography>;
+import HomeTemplate from '../components/templates/HomeTemplate';
+
+const HomePage: FC = () => {
+  return <HomeTemplate />;
 };
 
-export default LandingPage;
+export default HomePage;
