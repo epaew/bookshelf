@@ -1,17 +1,31 @@
+import { AuthorFactory } from '../domain/factories';
 import { Author } from '../domain/models/author';
+import { AuthorRepository } from '../domain/repositories';
 
-import { UsecaseError } from './errors';
 import { AuthorQueryModel, FetchAuthorService } from './query-services';
-import { AuthorRepository } from './repositories';
 
-export const CreateAuthorUsecase = (service: FetchAuthorService, repository: AuthorRepository) => {
-  return async ({ name }: { name: string }): Promise<Result<AuthorQueryModel, UsecaseError>> => {
-    const author = new Author();
-    author.name = name;
+interface UsecaseParams {
+  factory: AuthorFactory;
+  queryService: FetchAuthorService;
+  repository: AuthorRepository;
+}
 
-    const result = await repository.save(author);
-    if (result.error) return result;
+interface Params {
+  name: string;
+}
 
-    return service.fetch(result.value.id);
+export const CreateAuthorUsecase = ({ factory, queryService, repository }: UsecaseParams) => {
+  return async (params: Params): Promise<Result<AuthorQueryModel>> => {
+    const buildResult = await factory.build(params);
+    if (buildResult.error) return buildResult;
+
+    const { value: author } = buildResult;
+    const validationResult = await author.validate();
+    if (validationResult.error) return validationResult;
+
+    const saveResult = await repository.save(author);
+    if (saveResult.error) return saveResult;
+
+    return queryService.fetch(author.id);
   };
 };
