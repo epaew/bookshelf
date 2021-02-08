@@ -4,9 +4,12 @@ import { FetchAuthorService } from '../../usecases/query-services';
 
 export const fetchAuthorService: FetchAuthorService = {
   fetch: async id => {
-    const author = await prisma.author.findUnique({ where: { id } });
-    if (author) return { value: author };
-
-    return { error: new ApplicationError('FetchAuthorService::EntityNotFoundError') };
+    try {
+      const author = await prisma.author.findUnique({ where: { id } });
+      return { value: author };
+    } catch (e) {
+      console.error(e);
+      return { error: new ApplicationError('UNEXPECTED_ERROR') };
+    }
   },
 };

@@ -13,12 +13,14 @@ export class AuthorValidator {
     return this.validateAuthorName(author);
   }
 
-  private async validateAuthorName({ id, name }: Author): Promise<Result<boolean>> {
+  private async validateAuthorName({ name }: Author): Promise<Result<boolean>> {
     const result = await this.#repository.isAuthorWithNamePresent(name);
     if (result.error) return result;
 
     if (result.value) {
-      return { error: new ApplicationError('Domain::Author::ValidationError::name::uniqueness') };
+      return {
+        error: new ApplicationError('RECORD_INVALID', { entityName: 'Author', invalidFields: { name: 'not_unique' } }),
+      };
     } else {
       return { value: true };
     }

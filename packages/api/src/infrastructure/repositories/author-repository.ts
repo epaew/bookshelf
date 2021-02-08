@@ -10,7 +10,7 @@ export const authorRepository: AuthorRepository = {
       return { value: Boolean(result) };
     } catch (e) {
       console.error(e);
-      return { error: new ApplicationError('AuthorRepository::UnexpectedError') };
+      return { error: new ApplicationError('UNEXPECTED_ERROR') };
     }
   },
   isAuthorWithNamePresent: async name => {
@@ -19,7 +19,7 @@ export const authorRepository: AuthorRepository = {
       return { value: Boolean(result) };
     } catch (e) {
       console.error(e);
-      return { error: new ApplicationError('AuthorRepository::UnexpectedError') };
+      return { error: new ApplicationError('UNEXPECTED_ERROR') };
     }
   },
   save: async author => {
@@ -30,7 +30,7 @@ export const authorRepository: AuthorRepository = {
       return { value: null };
     } catch (e) {
       console.error(e);
-      return { error: new ApplicationError('AuthorRepository::EntityNotSavedError') };
+      return { error: new ApplicationError('UNEXPECTED_ERROR') };
     }
   },
 };

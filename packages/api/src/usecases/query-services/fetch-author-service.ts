@@ -4,5 +4,5 @@ export interface AuthorQueryModel {
 }
 
 export interface FetchAuthorService {
-  fetch(id: string): Promise<Result<AuthorQueryModel>>;
+  fetch(id: string): Promise<Result<AuthorQueryModel | null>>;
 }

@@ -26,6 +26,6 @@ export const CreateAuthorUsecase = ({ factory, queryService, repository }: Useca
     const saveResult = await repository.save(author);
     if (saveResult.error) return saveResult;
 
-    return queryService.fetch(author.id);
+    return queryService.fetch(author.id) as Promise<Result<AuthorQueryModel>>;
   };
 };
