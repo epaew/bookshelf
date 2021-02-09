@@ -6,12 +6,18 @@ type ErrorCode =
   | 'RECORD_NOT_SAVED'
   | 'UNAUTHENTICATED'
   | 'UNEXPECTED_ERROR';
-type FieldValidationErrorCode = 'not_unique' | 'required' | 'too_long' | 'too_short';
+export type FieldValidationErrorCode =
+  | 'not_unique'
+  | 'required'
+  | `too_large:maximum:${number}`
+  | `too_long:maximum:${number}`
+  | `too_small:minimum:${number}`
+  | `too_short:minimum:${number}`;
 
-interface ErrorRecordInfo {
+export interface ErrorRecordInfo {
   entityName: string;
   invalidFields: {
-    [field: string]: FieldValidationErrorCode | `${FieldValidationErrorCode}:${string}`;
+    [field: string]: FieldValidationErrorCode[];
   };
 }
 
