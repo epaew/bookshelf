@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { createStyles, Theme, withStyles, WithStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Hidden from '@material-ui/core/Hidden';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
@@ -63,7 +62,6 @@ function Paperbase(props: PaperbaseProps) {
 
   return (
     <div className={classes.root}>
-      <CssBaseline />
       <nav className={classes.drawer}>
         <Hidden smUp implementation="js">
           <Navigator
