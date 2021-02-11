@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { createStyles, Theme, withStyles, WithStyles } from '@material-ui/core/styles';
 import Hidden from '@material-ui/core/Hidden';
-import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
-import { Container, Main, Root } from '../base/atoms';
+
+import { Container, Main, Root, Typography } from '../base/atoms';
 import Content from '../organisms/Content';
 import Header from '../organisms/Header';
 import Navigator from '../organisms/Navigator';

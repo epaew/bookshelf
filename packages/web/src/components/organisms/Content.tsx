@@ -1,6 +1,5 @@
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
@@ -10,6 +9,8 @@ import IconButton from '@material-ui/core/IconButton';
 import { createStyles, Theme, withStyles, WithStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
 import RefreshIcon from '@material-ui/icons/Refresh';
+
+import { Typography } from '../base/atoms';
 
 const styles = (theme: Theme) =>
   createStyles({
