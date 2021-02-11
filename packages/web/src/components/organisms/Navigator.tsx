@@ -1,7 +1,6 @@
 import { Fragment } from 'react';
 import clsx from 'clsx';
 import { createStyles, Theme, withStyles, WithStyles } from '@material-ui/core/styles';
-import Divider from '@material-ui/core/Divider';
 import Drawer, { DrawerProps } from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -18,6 +17,8 @@ import TimerIcon from '@material-ui/icons/Timer';
 import SettingsIcon from '@material-ui/icons/Settings';
 import PhonelinkSetupIcon from '@material-ui/icons/PhonelinkSetup';
 import { Omit } from '@material-ui/types';
+
+import { Divider } from '../navigation/atoms';
 
 const categories = [
   {
@@ -78,9 +79,6 @@ const styles = (theme: Theme) =>
       minWidth: 'auto',
       marginRight: theme.spacing(2),
     },
-    divider: {
-      marginTop: theme.spacing(2),
-    },
   });
 
 export interface NavigatorProps extends Omit<DrawerProps, 'classes'>, WithStyles<typeof styles> {}
@@ -127,7 +125,7 @@ function Navigator(props: NavigatorProps) {
                 </ListItemText>
               </ListItem>
             ))}
-            <Divider className={classes.divider} />
+            <Divider margin={{ top: 2 }} />
           </Fragment>
         ))}
       </List>
