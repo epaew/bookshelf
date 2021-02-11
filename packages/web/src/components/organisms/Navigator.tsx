@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import clsx from 'clsx';
 import { createStyles, Theme, withStyles, WithStyles } from '@material-ui/core/styles';
 import Divider from '@material-ui/core/Divider';
@@ -105,7 +105,7 @@ function Navigator(props: NavigatorProps) {
           </ListItemText>
         </ListItem>
         {categories.map(({ id, children }) => (
-          <React.Fragment key={id}>
+          <Fragment key={id}>
             <ListItem className={classes.categoryHeader}>
               <ListItemText
                 classes={{
@@ -128,7 +128,7 @@ function Navigator(props: NavigatorProps) {
               </ListItem>
             ))}
             <Divider className={classes.divider} />
-          </React.Fragment>
+          </Fragment>
         ))}
       </List>
     </Drawer>

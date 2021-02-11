@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { createStyles, Theme, withStyles, WithStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Hidden from '@material-ui/core/Hidden';
@@ -55,7 +55,7 @@ export interface PaperbaseProps extends WithStyles<typeof styles> {}
 
 function Paperbase(props: PaperbaseProps) {
   const { classes } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);

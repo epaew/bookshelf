@@ -1,4 +1,3 @@
-import React from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -49,7 +48,7 @@ function Header(props: HeaderProps) {
   const { classes, onDrawerToggle } = props;
 
   return (
-    <React.Fragment>
+    <>
       <AppBar color="primary" position="sticky" elevation={0}>
         <Toolbar>
           <Grid container spacing={1} alignItems="center">
@@ -129,7 +128,7 @@ function Header(props: HeaderProps) {
           <Tab textColor="inherit" label="Usage" />
         </Tabs>
       </AppBar>
-    </React.Fragment>
+    </>
   );
 }
 
