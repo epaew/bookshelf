@@ -3,6 +3,7 @@ import { createStyles, Theme, withStyles, WithStyles } from '@material-ui/core/s
 import Hidden from '@material-ui/core/Hidden';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
+import { Root } from '../base/atoms';
 import Content from '../organisms/Content';
 import Header from '../organisms/Header';
 import Navigator from '../organisms/Navigator';
@@ -24,10 +25,6 @@ const drawerWidth = 256;
 
 const styles = (theme: Theme) =>
   createStyles({
-    root: {
-      display: 'flex',
-      minHeight: '100vh',
-    },
     drawer: {
       [theme.breakpoints.up('sm')]: {
         width: drawerWidth,
@@ -61,7 +58,7 @@ function Paperbase(props: PaperbaseProps) {
   };
 
   return (
-    <div className={classes.root}>
+    <Root>
       <nav className={classes.drawer}>
         <Hidden smUp implementation="js">
           <Navigator
@@ -84,7 +81,7 @@ function Paperbase(props: PaperbaseProps) {
           <Copyright />
         </footer>
       </div>
-    </div>
+    </Root>
   );
 }
 
