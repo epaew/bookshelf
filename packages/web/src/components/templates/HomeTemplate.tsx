@@ -3,7 +3,7 @@ import { createStyles, Theme, withStyles, WithStyles } from '@material-ui/core/s
 import Hidden from '@material-ui/core/Hidden';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
-import { Root } from '../base/atoms';
+import { Main, Root } from '../base/atoms';
 import Content from '../organisms/Content';
 import Header from '../organisms/Header';
 import Navigator from '../organisms/Navigator';
@@ -35,11 +35,6 @@ const styles = (theme: Theme) =>
       flex: 1,
       display: 'flex',
       flexDirection: 'column',
-    },
-    main: {
-      flex: 1,
-      padding: theme.spacing(6, 4),
-      background: '#eaeff1',
     },
     footer: {
       padding: theme.spacing(2),
@@ -74,9 +69,9 @@ function Paperbase(props: PaperbaseProps) {
       </nav>
       <div className={classes.app}>
         <Header onDrawerToggle={handleDrawerToggle} />
-        <main className={classes.main}>
+        <Main>
           <Content />
-        </main>
+        </Main>
         <footer className={classes.footer}>
           <Copyright />
         </footer>
