@@ -1,14 +1,13 @@
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Paper from '@material-ui/core/Paper';
-import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Tooltip from '@material-ui/core/Tooltip';
 import IconButton from '@material-ui/core/IconButton';
 import { createStyles, Theme, withStyles, WithStyles } from '@material-ui/core/styles';
 
-import { RefreshIcon, SearchIcon, Typography } from '../base/atoms';
+import { GridContainer, GridItem, RefreshIcon, SearchIcon, Typography } from '../base/atoms';
 
 const styles = (theme: Theme) =>
   createStyles({
@@ -43,11 +42,11 @@ function Content(props: ContentProps) {
     <Paper className={classes.paper}>
       <AppBar className={classes.searchBar} position="static" color="default" elevation={0}>
         <Toolbar>
-          <Grid container spacing={2} alignItems="center">
-            <Grid item>
+          <GridContainer spacing={2}>
+            <GridItem>
               <SearchIcon className={classes.block} color="inherit" />
-            </Grid>
-            <Grid item xs>
+            </GridItem>
+            <GridItem xs>
               <TextField
                 fullWidth
                 placeholder="Search by email address, phone number, or user UID"
@@ -56,8 +55,8 @@ function Content(props: ContentProps) {
                   className: classes.searchInput,
                 }}
               />
-            </Grid>
-            <Grid item>
+            </GridItem>
+            <GridItem>
               <Button variant="contained" color="primary" className={classes.addUser}>
                 Add user
               </Button>
@@ -66,8 +65,8 @@ function Content(props: ContentProps) {
                   <RefreshIcon className={classes.block} color="inherit" />
                 </IconButton>
               </Tooltip>
-            </Grid>
-          </Grid>
+            </GridItem>
+          </GridContainer>
         </Toolbar>
       </AppBar>
       <div className={classes.contentWrapper}>

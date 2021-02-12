@@ -1,7 +1,6 @@
 import AppBar from '@material-ui/core/AppBar';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
 import HelpIcon from '@material-ui/icons/Help';
 import IconButton from '@material-ui/core/IconButton';
 import Link from '@material-ui/core/Link';
@@ -13,7 +12,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Tooltip from '@material-ui/core/Tooltip';
 import { createStyles, Theme, withStyles, WithStyles } from '@material-ui/core/styles';
 
-import { Hidden, Typography } from '../base/atoms';
+import { GridContainer, GridItem, Hidden, Typography } from '../base/atoms';
 
 const lightColor = 'rgba(255, 255, 255, 0.7)';
 
@@ -51,9 +50,9 @@ function Header(props: HeaderProps) {
     <>
       <AppBar color="primary" position="sticky" elevation={0}>
         <Toolbar>
-          <Grid container spacing={1} alignItems="center">
+          <GridContainer spacing={1}>
             <Hidden smUp>
-              <Grid item>
+              <GridItem>
                 <IconButton
                   color="inherit"
                   aria-label="open drawer"
@@ -62,50 +61,50 @@ function Header(props: HeaderProps) {
                 >
                   <MenuIcon />
                 </IconButton>
-              </Grid>
+              </GridItem>
             </Hidden>
-            <Grid item xs />
-            <Grid item>
+            <GridItem xs />
+            <GridItem>
               <Link className={classes.link} href="#" variant="body2">
                 Go to docs
               </Link>
-            </Grid>
-            <Grid item>
+            </GridItem>
+            <GridItem>
               <Tooltip title="Alerts • No alerts">
                 <IconButton color="inherit">
                   <NotificationsIcon />
                 </IconButton>
               </Tooltip>
-            </Grid>
-            <Grid item>
+            </GridItem>
+            <GridItem>
               <IconButton color="inherit" className={classes.iconButtonAvatar}>
                 <Avatar src="/static/images/avatar/1.jpg" alt="My Avatar" />
               </IconButton>
-            </Grid>
-          </Grid>
+            </GridItem>
+          </GridContainer>
         </Toolbar>
       </AppBar>
       <AppBar component="div" className={classes.secondaryBar} color="primary" position="static" elevation={0}>
         <Toolbar>
-          <Grid container alignItems="center" spacing={1}>
-            <Grid item xs>
+          <GridContainer spacing={1}>
+            <GridItem xs>
               <Typography color="inherit" variant="h5" component="h1">
                 Authentication
               </Typography>
-            </Grid>
-            <Grid item>
+            </GridItem>
+            <GridItem>
               <Button className={classes.button} variant="outlined" color="inherit" size="small">
                 Web setup
               </Button>
-            </Grid>
-            <Grid item>
+            </GridItem>
+            <GridItem>
               <Tooltip title="Help">
                 <IconButton color="inherit">
                   <HelpIcon />
                 </IconButton>
               </Tooltip>
-            </Grid>
-          </Grid>
+            </GridItem>
+          </GridContainer>
         </Toolbar>
       </AppBar>
       <AppBar component="div" className={classes.secondaryBar} color="primary" position="static" elevation={0}>
