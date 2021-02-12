@@ -85,13 +85,7 @@ function Header(props: HeaderProps) {
           </Grid>
         </Toolbar>
       </AppBar>
-      <AppBar
-        component="div"
-        className={classes.secondaryBar}
-        color="primary"
-        position="static"
-        elevation={0}
-      >
+      <AppBar component="div" className={classes.secondaryBar} color="primary" position="static" elevation={0}>
         <Toolbar>
           <Grid container alignItems="center" spacing={1}>
             <Grid item xs>
@@ -114,13 +108,7 @@ function Header(props: HeaderProps) {
           </Grid>
         </Toolbar>
       </AppBar>
-      <AppBar
-        component="div"
-        className={classes.secondaryBar}
-        color="primary"
-        position="static"
-        elevation={0}
-      >
+      <AppBar component="div" className={classes.secondaryBar} color="primary" position="static" elevation={0}>
         <Tabs value={0} textColor="inherit">
           <Tab textColor="inherit" label="Users" />
           <Tab textColor="inherit" label="Sign-in method" />
