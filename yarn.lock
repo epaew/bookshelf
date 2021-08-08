@@ -1494,10 +1494,10 @@
   resolved "https://registry.yarnpkg.com/@prisma/engines-version/-/engines-version-2.16.0-44.854c8ba7f0dce66f115af36af24e66989a8c02a1.tgz#6df1a9a9f4c711e18861be2de4c4f0e363d0aae9"
   integrity sha512-/gcqWJDXoo0vsYi7fhdhdyjfMXxJPjKl8K7oc/k2BH7IQuXUB1A+ZnFgqRcT/rKuyU4xH8+N+l+C4boWlqYvgQ==
 
-"@prisma/engines@2.16.0-44.854c8ba7f0dce66f115af36af24e66989a8c02a1":
-  version "2.16.0-44.854c8ba7f0dce66f115af36af24e66989a8c02a1"
-  resolved "https://registry.yarnpkg.com/@prisma/engines/-/engines-2.16.0-44.854c8ba7f0dce66f115af36af24e66989a8c02a1.tgz#c7a53f31eafca0e4c010663740ee22ea678f757e"
-  integrity sha512-vt8w+vqCEaTUGZes7mrY5BkF3zZIPTQ9x+C9Ynmr9d+WW54vTqJt7lDFS6eps0LYoqdcCHEs3r/SydCqjII+OQ==
+"@prisma/engines@2.28.0-17.89facabd0366f63911d089156a7a70125bfbcd27":
+  version "2.28.0-17.89facabd0366f63911d089156a7a70125bfbcd27"
+  resolved "https://registry.yarnpkg.com/@prisma/engines/-/engines-2.28.0-17.89facabd0366f63911d089156a7a70125bfbcd27.tgz#5a563ead03405fc6ccb33fe48f8b3a8712be391e"
+  integrity sha512-r3/EnwKjbu2qz13I98hPQQdeFrOEcwdjlrB9CcoSoqRCjSHLnpdVMUvRfYuRKIoEF7p941R7/Fov0/CxOLF/MQ==
 
 "@protobufjs/aspromise@^1.1.1", "@protobufjs/aspromise@^1.1.2":
   version "1.1.2"
@@ -7938,12 +7938,12 @@ pretty-format@^26.0.0, pretty-format@^26.6.2:
     ansi-styles "^4.0.0"
     react-is "^17.0.1"
 
-prisma@2.16.0:
-  version "2.16.0"
-  resolved "https://registry.yarnpkg.com/prisma/-/prisma-2.16.0.tgz#a4d3d82932f8aa4b4c5415d254bd9966ed9b5c33"
-  integrity sha512-tV+28U0dfmuC0lRWZlqI3PLx+5U2UFw4h5fikBexglXsMOE60S732UDnQPOKS/wztJE7EDS36lk6FInFVDpkPQ==
+prisma@2.28.0:
+  version "2.28.0"
+  resolved "https://registry.yarnpkg.com/prisma/-/prisma-2.28.0.tgz#33adb56e336d4c4569ec2f49df9b606771df15d0"
+  integrity sha512-f83KPLy3xk07KMY4e5otNwP2I+GsdftjOfu3e8snXylnyAC1oEpRZNe7rmONr0vAI+Qgz3LFRArhWUE/dFjKIA==
   dependencies:
-    "@prisma/engines" "2.16.0-44.854c8ba7f0dce66f115af36af24e66989a8c02a1"
+    "@prisma/engines" "2.28.0-17.89facabd0366f63911d089156a7a70125bfbcd27"
 
 process-nextick-args@~2.0.0:
   version "2.0.1"
