@@ -1,4 +1,7 @@
-import { app } from './app';
+import { getApp } from './app';
 import { port } from './config';
 
-app.listen(port, () => console.log(`Api listening on port:${port}.`));
+getApp()
+  .then(app => {
+    app.listen(port, () => console.log(`Api listening on port:${port}.`));
+  });

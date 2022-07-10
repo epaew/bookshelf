@@ -2,8 +2,11 @@ import express from 'express';
 
 import { apolloServer } from './apollo-server';
 
-const app = express();
+export const getApp = async () => {
+  const app = express();
 
-apolloServer.applyMiddleware({ app });
+  await apolloServer.start();
+  app.use(apolloServer.getMiddleware());
 
-export { app };
+  return app;
+};
